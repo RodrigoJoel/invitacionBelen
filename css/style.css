@@ -1,0 +1,20 @@
+
+body{margin:0;background:linear-gradient(#240037,#4b1674);color:#fff;font-family:system-ui}
+#intro{position:fixed;inset:0;background:#1d012e;display:flex;justify-content:center;align-items:center;z-index:999}
+.book{background:#fff;color:#4b1674;padding:40px;border-radius:20px;text-align:center;max-width:500px}
+.hero{height:100vh;position:relative}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero-overlay h1{font-size:5rem;color:#ffd76a}
+section{padding:50px 20px;text-align:center}
+#countdown{font-size:2rem;font-weight:bold}
+#gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+#gallery img{width:100%;height:300px;object-fit:cover;border-radius:16px;cursor:pointer;transition:.3s}
+#gallery img:hover{transform:scale(1.03)}
+.card{background:rgba(255,255,255,.1);padding:20px;border-radius:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.btn{background:#ffd76a;color:#3b1457;padding:15px 30px;border-radius:30px;text-decoration:none;font-weight:bold}
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);justify-content:center;align-items:center}
+#lightbox img{max-width:90%;max-height:90%}
+.lantern{position:fixed;bottom:-50px;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-120vh)}}
