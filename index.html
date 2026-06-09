@@ -234,9 +234,9 @@ body {
 .hero-eyebrow {
   font-family: var(--font-ui);
   /* Aumentado grosor */
-  font-weight: 1000;
+  font-weight: 1200;
   letter-spacing: 0.4em;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -245,6 +245,7 @@ body {
 }
 .hero-name {
   font-family: var(--font-display);
+  font-weight: 1000;
   font-size: clamp(2.8rem, 9vw, 7rem);
   font-weight: 400;
   color: var(--white);
@@ -980,7 +981,7 @@ body {
 
 <!-- LOADING SCREEN -->
 <div id="loader">
-  <div class="loader-lantern">🏮</div>
+  <div class="loader-lantern"><img src="assets/img/sol.png" alt="Icono" style="width:100%;height:100%;object-fit:contain;"></div>
   <div class="loader-title">Nahiara Belén<br><span style="font-size:0.6em;letter-spacing:0.5em;color:rgba(240,208,128,0.5)">MIS 15 AÑOS</span></div>
   <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
 </div>
@@ -1010,19 +1011,19 @@ body {
   <section class="hero" id="hero">
     <div class="hero-bg" id="hero-bg"></div>
     <div class="hero-bg-layer"></div>
-    <div class="hero-content" style="transform:translateY(-180px);">
-      <p class="hero-eyebrow" id="hero-eyebrow">— Una noche mágica — </p>
-      <h1 class="hero-name" id="hero-name">
+    <div class="hero-content" style="transform:translateY(-200px);">
+      <p class="hero-eyebrow" id="hero-eyebrow" style="font-weight: 900;">—Una noche mágica— </p>
+      <h1 class="hero-name" id="hero-name" style="font-weight: 900;">
         Nahiara Belén
-        <em>Mis Quince Años</em>
+        <em>Mis XV Años</em>
       </h1>
-      <div class="hero-ornament-line" id="hero-line">
+    <!--   <div class="hero-ornament-line" id="hero-line">
         <span></span>
         <i>✦</i>
         <span></span>
-      </div>
-      <p class="hero-date" id="hero-date">31 de Julio, 2026 · 22:00 hs</p>
-    </div>
+      </div>-->
+<!--      <p class="hero-date" style="color: white;" id="hero-date">31 de Julio, 2026 · 22:00 hs</p>
+    </div>-->
     <div class="scroll-hint" id="scroll-hint">
       <span>Deslizar</span>
       <div class="scroll-arrow"></div>
@@ -1033,6 +1034,7 @@ body {
   <section class="section countdown-section">
     <div class="section-inner">
       <p class="section-eyebrow reveal-up">— El gran día —</p>
+      <p class="section-eyebrow reveal-up">31 de Julio, 2026 · 20:30 hs</p>
       <h2 class="section-title reveal-up">Faltan <em>exactamente</em></h2>
       <div class="gold-rule reveal-up"></div>
       <div class="countdown-grid">
@@ -1117,7 +1119,7 @@ body {
           <span class="info-card-icon">📅</span>
           <p class="info-card-label">Fecha</p>
           <p class="info-card-value">Viernes<br>31 de Julio, 2026</p>
-          <p class="info-card-sub">A partir de las 22:00 hs</p>
+          <p class="info-card-sub">A partir de las 20:30 hs</p>
         </div>
         <div class="info-card reveal-up" style="transition-delay:0.1s">
           <span class="info-card-icon">📍</span>
@@ -1128,6 +1130,7 @@ body {
         <div class="info-card reveal-up" style="transition-delay:0.2s">
           <span class="info-card-icon">👗</span>
           <p class="info-card-label">Vestimenta</p>
+          <p class="info-card-value">Elegante o Elegante Sport</p>
           <div class="dress-items" style="margin-top:12px;">
             <span class="dress-chip">Elegante</span>
             <span class="dress-chip">Formal</span>
@@ -1448,7 +1451,7 @@ function startCountdown() {
 // ─── GALLERY ───────────────────────────────────────────────
 const galleryGrid = document.getElementById('gallery-grid');
 const galleryImages = [];
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 2; i++) {
   galleryImages.push(`assets/img/img${i}.jpg`);
 }
 
