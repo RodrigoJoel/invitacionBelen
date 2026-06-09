@@ -15,8 +15,8 @@
   --gold:       #C9A84C;
   --gold-light: #F0D080;
   --gold-dark:  #8A6820;
-  --purple:     #2A0845;
-  --purple-mid: #4A1070;
+  --purple:     #9415fc;
+  --purple-mid: #6c3e8b;
   --purple-deep:#180030;
   --rose:       #C0607A;
   --cream:      #FFF8EE;
@@ -55,7 +55,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 28px;
 }
 .loader-lantern { font-size: 4rem; animation: loaderFloat 2s ease-in-out infinite; }
 .loader-title {
@@ -176,6 +176,7 @@ body {
 .open-btn span { position: relative; z-index: 1; }
 
 .book-stars {
+/*  background: url('assets/img/imgportada1') center /cover no-repeat;*/
   position: absolute;
   width: 100%; height: 100%;
   top: 0; left: 0;
@@ -207,7 +208,7 @@ body {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('assets/img/imgportada1.jpg') center/cover no-repeat;
+  background: url('assets/img/imgportada1.jpeg') center/cover no-repeat;
 }
 .hero-bg-layer {
   position: absolute; inset: 0;
@@ -232,9 +233,10 @@ body {
 }
 .hero-eyebrow {
   font-family: var(--font-ui);
-  font-weight: 300;
+  /* Aumentado grosor */
+  font-weight: 1000;
   letter-spacing: 0.4em;
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -988,7 +990,8 @@ body {
   <div class="book-stars" id="book-stars-container"></div>
   <div class="book-container">
     <div class="book-cover" id="book-cover">
-      <span class="book-ornament">🏮</span>
+    <!--  <span class="book-ornament">🏮</span>-->
+      <img src="assets/img/sol.png" alt="Sol Rapunzel" style="width:120px;filter:drop-shadow(0 0 6px rgba(201,168,76,0.5));">
       <h1>Nahiara Belén<br>Cabrera</h1>
       <p class="subtitle">te invita a celebrar</p>
       <div class="book-divider"></div>
@@ -1007,8 +1010,8 @@ body {
   <section class="hero" id="hero">
     <div class="hero-bg" id="hero-bg"></div>
     <div class="hero-bg-layer"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow" id="hero-eyebrow">— Una noche mágica —</p>
+    <div class="hero-content" style="transform:translateY(-180px);">
+      <p class="hero-eyebrow" id="hero-eyebrow">— Una noche mágica — </p>
       <h1 class="hero-name" id="hero-name">
         Nahiara Belén
         <em>Mis Quince Años</em>
