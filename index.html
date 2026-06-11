@@ -1106,10 +1106,10 @@ body {
     <!--  <span class="book-ornament">🏮</span>-->
       <img src="assets/img/sol.png" alt="Sol Rapunzel" style="width:120px;filter:drop-shadow(0 0 6px rgba(201,168,76,0.5));">
       <h1>Nahiara Belén<br>Cabrera</h1>
-      <p class="subtitle">te invita a celebrar</p>
+      <h1 class="subtitle">te invita a celebrar</h1>
       <div class="book-divider"></div>
       <p style="font-family:var(--font-display);font-size:clamp(2rem,6vw,3.5rem);color:var(--gold-light);letter-spacing:0.1em;margin-bottom:8px">15</p>
-      <p style="font-family:var(--font-body);font-style:italic;color:rgba(240,208,128,0.7);margin-bottom:32px">años de magia ✨</p>
+      <p style="font-family:var(--font-body);font-style:italic;color:rgba(240,208,128,0.7);margin-bottom:32px"><h1 class="subtitle">años de magia ✨</h1></p>
       <div class="book-divider"></div>
       <button class="open-btn" id="open-book-btn"><span>✦ Abrir Invitación ✦</span></button>
     </div>
@@ -1145,8 +1145,8 @@ body {
   <!-- COUNTDOWN -->
   <section class="section countdown-section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal-up">— El gran día —</p>
-      <p class="section-eyebrow reveal-up">31 de Julio, 2026 · 21:00 hs</p>
+      <h1 class="section-eyebrow reveal-up">— El gran día —</h1>
+      <h1 class="section-eyebrow reveal-up">31 de Julio, 2026 · 21:00 hs</h1>
       <h2 class="section-title reveal-up">Faltan <em>exactamente</em></h2>
       <div class="gold-rule reveal-up"></div>
       <div class="countdown-grid">
@@ -1176,16 +1176,16 @@ body {
   <!-- STORY -->
   <section class="section story-section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal-up">— Mi historia —</p>
+      <h3 class="section-eyebrow reveal-up">— Mi historia —</h3>
       <h2 class="section-title reveal-up">Hace 15 años comenzó<br><em>un cuento de hadas</em></h2>
       <div class="gold-rule reveal-up"></div>
       <div class="story-content">
-        <p class="story-text reveal-up">
+        <h3 class="story-text reveal-up">
           Desde pequeña soñé con este momento. Un sueño lleno de luz, de magia y de las personas que más amo a mi lado. Hoy ese sueño se hace realidad, y quiero vivirlo junto a vos.
-        </p>
-        <p class="story-text reveal-up" style="margin-top:20px;transition-delay:0.2s">
+        </h3>
+        <h3 class="story-text reveal-up" style="margin-top:20px;transition-delay:0.2s">
           Esta noche, como en cada historia mágica, habrá linternas que iluminarán el cielo, música que llenará el corazón, y recuerdos que durarán para siempre.
-        </p>
+        </h3>
         <div class="story-signature reveal-up">— Nahiara ✦</div>
       </div>
     </div>
@@ -1194,8 +1194,8 @@ body {
   <!-- GALLERY -->
   <section class="section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal-up">— Mis momentos —</p>
-      <h2 class="section-title reveal-up">Galería <em>de recuerdos</em></h2>
+      <h2 class="section-eyebrow reveal-up">— Mis momentos —</h2>
+      <h2 class="section-title reveal-up">Galería <em>de fotos</em></h2>
       <div class="gold-rule reveal-up"></div>
       <div class="gallery-grid" id="gallery-grid"></div>
     </div>
@@ -1223,7 +1223,7 @@ body {
   <!-- EVENT INFO -->
   <section class="section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal-up">— Te esperamos en —</p>
+      <h2 class="section-eyebrow reveal-up">— Te esperamos en —</h2>
       <h2 class="section-title reveal-up">Detalles <em>del evento</em></h2>
       <div class="gold-rule reveal-up"></div>
       <div class="info-cards">
@@ -1231,13 +1231,13 @@ body {
           <span class="info-card-icon">📅</span>
           <p class="info-card-label">Fecha</p>
           <p class="info-card-value">Viernes<br>31 de Julio, 2026</p>
-          <p class="info-card-sub">A partir de las 21:00 hs</p>
+          <h2 class="info-card-sub">A partir de las 21:00 hs</h2>
         </div>
         <div class="info-card reveal-up" style="transition-delay:0.1s">
           <span class="info-card-icon">📍</span>
           <p class="info-card-label">Lugar</p>
           <p class="info-card-value">Centro Empleados<br>de Comercio</p>
-          <p class="info-card-sub">Mitre 250, Resistencia, Chaco</p>
+          <h3 class="info-card-sub">Mitre 250, Resistencia, Chaco</h3>
         </div>
         <div class="info-card reveal-up" style="transition-delay:0.2s">
           <span class="info-card-icon">👗</span>
@@ -1574,8 +1574,8 @@ function startCountdown() {
 // ─── GALLERY ───────────────────────────────────────────────
 const galleryGrid = document.getElementById('gallery-grid');
 const galleryImages = [];
-for (let i = 1; i <= 2; i++) {
-  galleryImages.push(`assets/img/img${i}.jpg`);
+for (let i = 1; i <= 3; i++) {
+  galleryImages.push(`assets/img/img${i}.jpeg`);
 }
 
 galleryImages.forEach((src, idx) => {
