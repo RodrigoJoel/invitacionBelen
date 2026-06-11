@@ -18,6 +18,7 @@
   --purple:     #9415fc;
   --purple-mid: #6c3e8b;
   --purple-deep:#180030;
+ /* --purple-deep:#180030;*/
   --rose:       #C0607A;
   --cream:      #FFF8EE;
   --white:      #FFFFFF;
@@ -86,7 +87,7 @@ body {
 /* ===== BOOK INTRO ===== */
 #book-screen {
   position: fixed; inset: 0;
-  background: radial-gradient(ellipse at center, #3a0f60 0%, var(--purple-deep) 70%);
+  background: radial-gradient(ellipse at center, #9e74c2 0%, var(--purple-deep) 70%);
   z-index: 9000;
   display: flex;
   align-items: center;
@@ -120,6 +121,14 @@ body {
   background: linear-gradient(to right, #1a0630, #2e0a50);
   border-radius: 4px 0 0 4px;
   box-shadow: inset -3px 0 6px rgba(0,0,0,0.4);
+}
+.book-castle {
+  position: absolute;
+  right: -85px; bottom: 0;
+  width: 300px;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 14px rgba(180,100,255,.4));
 }
 .book-ornament {
   font-size: 3rem;
@@ -237,7 +246,7 @@ body {
   font-weight: 1200;
   letter-spacing: 0.4em;
   font-size: 1.1rem;
-  color: var(--gold);
+  color: var(--purple);
   text-transform: uppercase;
   margin-bottom: 20px;
   opacity: 0;
@@ -598,7 +607,7 @@ body {
 }
 
 /* ===== VIDEO SECTION ===== */
-.video-wrapper {
+/*.video-wrapper {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
@@ -613,10 +622,12 @@ body {
   opacity: 0;
   transform: translateY(30px);
 }
+
 .video-placeholder {
   text-align: center;
   padding: 40px;
 }
+*/
 .video-placeholder .play-icon {
   width: 80px; height: 80px;
   border: 2px solid var(--gold);
@@ -972,6 +983,106 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+.floater{
+    position:fixed;
+    z-index:2;
+    pointer-events:none;
+
+    animation:
+      floatUp linear infinite;
+}
+
+.floater.lamp{
+    width:var(--sz);
+    height:var(--sz);
+}
+
+.floater.lamp img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+
+    filter:
+      drop-shadow(0 0 10px #ffcf66)
+      drop-shadow(0 0 25px #ffcf66);
+}
+
+.floater.emoji{
+    font-size:var(--sz);
+
+    text-shadow:
+      0 0 10px gold,
+      0 0 20px gold;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:
+          translate(0,0)
+          rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+          translate(var(--dx),-120vh)
+          rotate(var(--rot));
+
+        opacity:0;
+    }
+}
+.floater.lamp img{
+    animation:
+       glow 3s ease-in-out infinite;
+}
+
+@keyframes glow{
+
+   0%,100%{
+      filter:
+        drop-shadow(0 0 8px #ffd76a)
+        drop-shadow(0 0 18px #ffd76a);
+   }
+
+   50%{
+      filter:
+        drop-shadow(0 0 18px #ffd76a)
+        drop-shadow(0 0 35px #ffd76a);
+   }
+}
+
+.confirm-wrap{
+  position:relative;
+  display:inline-block;
+  margin-top:70px;
+}
+
+.pascal-img{
+  position:absolute;
+
+  width:100px;
+  height:auto;
+
+  top:-65px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  z-index:10;
+
+  animation:pascalFloat 3s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 4px 10px rgba(0,0,0,.35));
+}
 </style>
 </head>
 <body>
@@ -991,6 +1102,7 @@ body {
   <div class="book-stars" id="book-stars-container"></div>
   <div class="book-container">
     <div class="book-cover" id="book-cover">
+      <img class="book-castle" src="assets/img/castilloportada.png" alt="Torre Rapunzel">
     <!--  <span class="book-ornament">🏮</span>-->
       <img src="assets/img/sol.png" alt="Sol Rapunzel" style="width:120px;filter:drop-shadow(0 0 6px rgba(201,168,76,0.5));">
       <h1>Nahiara Belén<br>Cabrera</h1>
@@ -1092,17 +1204,17 @@ body {
   <!-- VIDEO -->
   <section class="section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal-up">— Para vos —</p>
-      <h2 class="section-title reveal-up">Un video <em>especial</em></h2>
+    <!--  <p class="section-eyebrow reveal-up">— Para vos —</p>-->
+    <!--  <h2 class="section-title reveal-up">Un video <em>especial</em></h2>-->
       <div class="gold-rule reveal-up"></div>
       <div class="video-wrapper reveal-up" id="video-wrapper">
         <div class="video-placeholder" id="video-placeholder">
-          <div class="play-icon" id="play-btn">▶</div>
-          <p>Video especial próximamente</p>
-          <p style="font-size:0.8rem;margin-top:8px;color:rgba(255,248,238,0.3)">Reemplazá assets/video/video15.mp4</p>
+          <div class="" id="play-btn"></div>
+        <!--  <p>Video especial próximamente</p>-->
+          <p style="font-size:0.8rem;margin-top:8px;color:rgba(255,248,238,0.3)"></p>
         </div>
         <video id="main-video" style="display:none" controls>
-          <source src="assets/video/video15.mp4" type="video/mp4">
+        <!--  <source src="assets/video/video15.mp4" type="video/mp4">-->
         </video>
       </div>
     </div>
@@ -1129,8 +1241,9 @@ body {
         </div>
         <div class="info-card reveal-up" style="transition-delay:0.2s">
           <span class="info-card-icon">👗</span>
-          <p class="info-card-label">Vestimenta</p>
-          <p class="info-card-value">Elegante o Elegante Sport</p>
+          <p class="info-card-label">Dress Code</p>
+          <p class="info-card-value">Elegante Sport</p>
+          <h3>Color: Morado/Lila Reservado para la quinceañera</h3>
           <div class="dress-items" style="margin-top:12px;">
             <span class="dress-chip">Elegante</span>
             <span class="dress-chip">Formal</span>
@@ -1160,7 +1273,7 @@ body {
     </div>
   </section>
 
-  <!-- MESSAGES -->
+  <!-- MESSAGES 
   <section class="section">
     <div class="section-inner">
       <p class="section-eyebrow reveal-up">— Tu mensaje —</p>
@@ -1176,25 +1289,35 @@ body {
       </div>
     </div>
   </section>
-
+-->
   <!-- CONFIRM -->
   <section class="section confirm-section">
     <div class="section-inner">
       <p class="section-eyebrow reveal-up">— Tu presencia —</p>
-      <h2 class="section-title reveal-up">¿Nos <em>acompañás</em>?</h2>
+      <h2 class="section-title reveal-up">¿Me <em>acompañás</em>?</h2>
       <div class="gold-rule reveal-up"></div>
-      <a 
-        href="https://wa.me/543624271016?text=¡Hola%20Nahiara!%20Confirmo%20mi%20asistencia%20a%20tu%20fiesta%20de%2015%20años%20el%2031%20de%20Julio%20🎉✨"
-        class="confirm-btn reveal-up"
-        target="_blank"
-      >
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Confirmar Asistencia
-      </a>
-      <p class="confirm-subtext reveal-up">Confirmá antes del 20 de Julio · Te esperamos con todo el corazón</p>
-    </div>
+
+      <!-- Pascal con globo de diálogo -->
+      <div class="confirm-wrap">
+
+  <img
+    class="pascal-img"
+    src="assets/img/pascal.png"
+    alt="Pascal de Rapunzel"
+  >
+
+  <a
+    href="https://wa.me/543624271016?text=¡Hola%20Nahiara!%20Confirmo%20mi%20asistencia%20a%20tu%20fiesta%20de%2015%20años%20el%2031%20de%20Julio%20🎉✨"
+    class="confirm-btn reveal-up"
+    target="_blank"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      ...
+    </svg>
+    Confirmar Asistencia
+  </a>
+
+</div>
   </section>
 
   <footer class="site-footer">
@@ -1381,7 +1504,7 @@ function initHeroAnimations() {
 
 // ─── FLOATING LANTERNS ─────────────────────────────────────
 function initLanterns() {
-  const lanterns = ['🏮','🏮','🕯️','✨','🌟', '🔥', 'rodrigo'];
+  const lanterns = ['🏮','🏮','🕯️','✨','🌟'];
   for (let i = 0; i < 18; i++) {
     const el = document.createElement('div');
     el.className = 'lantern';
@@ -1629,6 +1752,64 @@ function initScrollReveal() {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => observer.observe(el));
 }
+function initLanterns(){
+  const total=24;
+
+  for(let i=0;i<total;i++){
+
+    const el=document.createElement('div');
+    el.className='floater';
+
+    const dur=12+Math.random()*20;
+    const delay=Math.random()*26;
+
+    const dx=`${(Math.random()-.5)*100}px`;
+    const rot=`${(Math.random()-.5)*28}deg`;
+
+    const left=Math.random()*100;
+
+    const roll=Math.random();
+
+    if(roll < 0.55){
+
+      el.classList.add('lamp');
+
+      const sz=38+Math.random()*50;
+
+      el.style.setProperty('--sz',sz+'px');
+
+      el.innerHTML=`
+        <img src="assets/img/lamparaflotante.png" alt="">
+      `;
+
+    }else{
+
+      el.classList.add('emoji');
+
+      const emojis=[];
+
+      el.textContent=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+      el.style.setProperty(
+        '--sz',
+        (1+Math.random()*1.2)+'rem'
+      );
+    }
+
+    el.style.cssText += `
+      left:${left}vw;
+      bottom:-80px;
+      animation-duration:${dur}s;
+      animation-delay:${delay}s;
+      --dx:${dx};
+      --rot:${rot};
+    `;
+
+    document.body.appendChild(el);
+  }
+}
+initLanterns();
 
 // Load messages on start
 loadMessages();
